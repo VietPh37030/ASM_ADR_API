@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/white"
+    android:elevation="10dp">
+    <LinearLayout
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/ivanhpk"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:background="@drawable/cay" />
+
+        <TextView
+            android:id="@+id/tvnamecay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Spider Plant"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:fontFamily="@font/font1"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tvloaicay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Ưa bóng"
+            android:textFontWeight="400"
+            android:lineHeight="22dp"
+            android:textColor="#7D7B7B"
+            android:fontFamily="@font/font1"
+            android:textSize="14dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvpkgia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="490.000 đ"
+                android:textColor="#007537"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/it_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+android:background="@drawable/oval_background1"
+                android:layout_weight="1"
+                android:src="@drawable/heart"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

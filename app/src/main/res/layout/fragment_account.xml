@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.Account">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="64dp"
+                        android:layout_height="20dp"
+                        android:fontFamily="@font/font1"
+                        android:gravity="center"
+                        android:lineHeight="16dp"
+                        android:text="Profile"
+                        android:textColor="#221F1F"
+                        android:textFontWeight="400"
+                        android:textSize="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="387dp"
+                    android:layout_height="107dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="#D9D9D9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="39dp"
+                        android:layout_height="39dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginEnd="314dp"
+                        android:background="@drawable/oval_background1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/avatar" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font1"
+                        android:lineHeight="22dp"
+                        android:text="Trần Minh Trí"
+                        android:textColor="#000000"
+                        android:textFontWeight="700"
+                        android:textSize="20sp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.164"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.386" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font1"
+                        android:lineHeight="20dp"
+                        android:text="tranminhtri@gmail.com"
+                        android:textColor="#7F7F7F"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.212"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView12"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/font1"
+                    android:textColor="#7F7F7F"
+                    android:textFontWeight="400"
+                    android:text="Chung" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/line" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chỉnh sửa thông tin"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:textFontWeight="500"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/font1"/>
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cẩm nang trồng cây"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000"
+                    android:textFontWeight="500"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/font1"/>
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lịch sử giao dịch"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    android:textFontWeight="500"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/font1"/>
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Q &amp; A"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:textFontWeight="500"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/font1"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textVies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/font1"
+                    android:textColor="#7F7F7F"
+                    android:textFontWeight="400"
+                    android:text="Bảo mật và Điều khoản" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView3s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/line" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView171"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Điều khoản và điều kiện"
+                    android:textSize="20dp"
+                    android:textColor="#000"
+                    android:textFontWeight="500"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/font1"/>
+
+                <TextView
+                    android:id="@+id/textView191"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chính sách quyền riêng tư"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000"
+                    android:textFontWeight="500"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/font1"/>
+
+                <TextView
+                    android:id="@+id/account_tx_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Đăng xuất"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="#FF0000"
+                    android:textFontWeight="500"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/font1"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

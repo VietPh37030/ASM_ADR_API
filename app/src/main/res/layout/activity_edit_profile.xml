@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="5dp"
+    tools:context=".Activity.EditProfile">
+
+    <ImageView
+    android:id="@+id/edit_img_avatar"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:background="@drawable/oval_background1"
+    android:src="@drawable/avatar2"
+    />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textFontWeight="400"
+        android:textSize="14sp"
+        android:lineHeight="20dp"
+        android:fontFamily="@font/font1"
+        android:textColor="#000"
+        android:text="Thông tin sẽ được lưu cho lần mua kế tiếp.\nBấm vào thông tin chi tiết để chỉnh sửa."
+        android:lines="2" />
+
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên người dùng:"
+            android:textColor="#000"
+            android:fontFamily="@font/font1"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"
+            />
+    <EditText
+        android:id="@+id/edit_edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên người dùng"
+
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textColor="#000"
+            android:fontFamily="@font/font1"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"/>
+        <EditText
+            android:id="@+id/edit_edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ:"
+            android:textColor="#000"
+            android:fontFamily="@font/font1"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"/>
+        <EditText
+            android:id="@+id/edit_edt_adress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại:"
+            android:textColor="#000"
+            android:fontFamily="@font/font1"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"/>
+        <EditText
+            android:id="@+id/edit_edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số điện thoại "
+            />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="327dp"
+        android:layout_height="50dp"
+        android:text="LƯU THÔNG TIN"
+        android:textColor="#fff"
+        android:inputType="number"
+        android:fontFamily="@font/font1"
+        android:textFontWeight="500"
+        android:lineHeight="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_gradian"
+        />
+</LinearLayout>
