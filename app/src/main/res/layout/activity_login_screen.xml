@@ -75,11 +75,11 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/login_edt_email"
+                android:id="@+id/login_edt_username"
                 android:layout_width="350dp"
                 android:layout_height="46dp"
                 android:background="@drawable/edittext"
-                android:hint="Email"
+                android:hint="User Name"
                 android:fontFamily="@font/font1"
                 android:inputType="text"
                 android:paddingLeft="10dp"
@@ -95,15 +95,17 @@
                 android:layout_height="46dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
-                android:drawableRight="@drawable/hide"
                 android:drawablePadding="10dp"
                 android:hint="Password"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="#000000"
                 android:lineHeight="22.5dp"
-                android:textFontWeight="400"/>
+                android:textFontWeight="400"
+               />
+
+
 
             <!--                    android:visibility="gone"-->
                     />

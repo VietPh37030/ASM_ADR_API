@@ -178,7 +178,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
@@ -190,14 +189,22 @@
                 android:textSize="20dp"
                 android:fontFamily="@font/font1"
                 android:textStyle="bold" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLoai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/catView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp" />
+</LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -230,12 +237,15 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/bestView"
+                android:id="@+id/rcyproduct"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="287dp"
                 android:clipToPadding="false"
                 android:paddingStart="12dp"
-                android:paddingEnd="12dp" />
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="100dp"/>
 
         </LinearLayout>
     </ScrollView>

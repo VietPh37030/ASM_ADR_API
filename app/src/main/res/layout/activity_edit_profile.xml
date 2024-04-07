@@ -48,7 +48,7 @@
             android:textSize="17dp"
             />
     <EditText
-        android:id="@+id/edit_edt_name"
+        android:id="@+id/edit_edt_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Tên người dùng"
@@ -73,32 +73,33 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Địa chỉ:"
+            android:text="Họ Tên:"
             android:textColor="#000"
             android:fontFamily="@font/font1"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:textSize="17dp"/>
         <EditText
-            android:id="@+id/edit_edt_adress"
+            android:id="@+id/edit_edt_hoten"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Địa chỉ"
+            android:hint="Họ Tên"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Số điện thoại:"
+            android:text="Password:"
             android:textColor="#000"
             android:fontFamily="@font/font1"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:textSize="17dp"/>
         <EditText
-            android:id="@+id/edit_edt_phone"
+            android:id="@+id/edit_edt_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Số điện thoại "
+            android:hint="Password "
+            android:inputType="textPassword"
             />
 
     </LinearLayout>

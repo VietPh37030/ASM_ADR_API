@@ -9,11 +9,12 @@
     tools:context=".Wellcome.SignUpScreen">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-150dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background_1" />
+        android:id="@+id/imgavatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,6 @@
         android:layout_margin="3dp"
         android:layout_weight="7"
         android:orientation="vertical">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,11 +49,11 @@
             android:gravity="center"
             android:orientation="vertical">
             <EditText
-                android:id="@+id/signup_edt_hoten"
+                android:id="@+id/signup_edt_username"
                 android:layout_width="350dp"
                 android:layout_height="46dp"
                 android:background="@drawable/edittext"
-                android:hint="Họ tên"
+                android:hint="User Name"
                 android:fontFamily="@font/font1"
                 android:inputType="text"
                 android:paddingLeft="10dp"
@@ -76,13 +76,13 @@
                 android:textFontWeight="400"/>
             <EditText
                 android:fontFamily="@font/font1"
-                android:id="@+id/signup_edt_sdt"
+                android:id="@+id/signup_edt_password"
                 android:layout_width="350dp"
                 android:layout_height="46dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
                 android:drawablePadding="10dp"
-                android:hint="Số điện thoại"
+                android:hint="Password"
                 android:inputType="number"
                 android:paddingLeft="10dp"
                 android:textColor="#000000"
@@ -90,13 +90,13 @@
                 android:textFontWeight="400"/>
             <EditText
                 android:fontFamily="@font/font1"
-                android:id="@+id/signup_edt_password"
+                android:id="@+id/signup_edt_hoten"
                 android:layout_width="350dp"
                 android:layout_height="46dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
-                android:hint="Password"
-                android:inputType="textPassword"
+                android:hint="Họ tên"
+                android:inputType="text"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="#000000"

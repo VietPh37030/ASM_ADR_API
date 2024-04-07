@@ -11,7 +11,10 @@
         android:id="@+id/pagerMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ADFFFFFF" />
+        android:background="#ADFFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/menu_nav"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -26,11 +29,12 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/menu_nav"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="64dp"
             android:background="#D9D9D9"
+
+            app:itemBackground="@drawable/bottom_nav_item_background"
             app:itemIconTint="@color/color_item_bottom_nav"
             app:itemTextColor="@color/color_item_bottom_nav"
-            app:itemBackground="@drawable/bottom_nav_item_background"
             app:menu="@menu/bottom_navigation" />
     </androidx.cardview.widget.CardView>
 
