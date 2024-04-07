@@ -1,15 +1,7 @@
 package com.example.ass_adr_api.Fragment;
 
-import static android.app.ProgressDialog.show;
-
-import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +9,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ass_adr_api.Activity.DeiltaActivity;
 import com.example.ass_adr_api.Adapter.CategoriesAdapter;
 import com.example.ass_adr_api.Adapter.ProductsAdapter;
 import com.example.ass_adr_api.Models.Categorie;
 import com.example.ass_adr_api.Models.Product;
+import com.example.ass_adr_api.Models.ProductClickListener;
 import com.example.ass_adr_api.Models.Response;
 import com.example.ass_adr_api.R;
 import com.example.ass_adr_api.services.HttpRequest;
@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class Home extends Fragment  {
+public class Home extends Fragment implements ProductClickListener {
     private RecyclerView recloai;
     private RecyclerView rcyproduct;
     private HttpRequest httpRequest;
@@ -39,92 +39,86 @@ public class Home extends Fragment  {
     private CategoriesAdapter adapter;
     private ProductsAdapter productAdapter;
     private ArrayList<Categorie> list;
-    private ArrayList<Product> listprouct;
-    private ViewPager viewPager;
+    private ArrayList<Product> listProduct;
+
     public Home() {
         // Required empty public constructor
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        initLocation(rootView); // Pass the inflated view to the method
-        recloai = rootView.findViewById(R.id.rcvLoai);  // Corrected
+        initLocation(rootView);
+        recloai = rootView.findViewById(R.id.rcvLoai);
         rcyproduct = rootView.findViewById(R.id.rcyproduct);
-        list= new ArrayList<>();
-
+        list = new ArrayList<>();
+        listProduct = new ArrayList<>();
         httpRequest = new HttpRequest();
         httpRequest.CallApi()
-                .getListCategories()//phương thi api cân thuc thi
-                .enqueue(getListCategotiesApi);//xử lý bất đồng bộ
-        listprouct= new ArrayList<>();
+                .getListCategories()
+                .enqueue(getListCategoriesApi);
         httpRequest2 = new HttpRequest2();
         httpRequest2.CallApi()
-                .getListProduct()//phương thi api cân thuc thi
-                .enqueue(getListProductApi);//xử lý bất đồng bộ
+                .getListProduct()
+                .enqueue(getListProductApi);
         return rootView;
     }
 
-
     private void initLocation(View rootView) {
         String[] items = {"Hà Nội", "Hồ Chí Minh", "Đà Nẵng"};
-        final Spinner locationSpinner = rootView.findViewById(R.id.spinner); // Use rootView.findViewById()
+        final Spinner locationSpinner = rootView.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         locationSpinner.setAdapter(adapter);
     }
+
     private void getData(ArrayList<Categorie> ds) {
         adapter = new CategoriesAdapter(getContext(), ds);
         recloai.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         recloai.setHasFixedSize(true);
         recloai.setAdapter(adapter);
     }
+
     private void getData2(ArrayList<Product> pr) {
-        productAdapter = new ProductsAdapter(getContext(),pr);
+        productAdapter = new ProductsAdapter(getContext(), pr);
+        productAdapter.setProductClickListener(this);
         rcyproduct.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         rcyproduct.setHasFixedSize(true);
         rcyproduct.setAdapter(productAdapter);
     }
-    Callback<Response<ArrayList<Categorie>>> getListCategotiesApi = new Callback<Response<ArrayList<Categorie>>>() {
-        // phương thức được gọi khi có phản hồi từ yêu cầu API.
-        // Nó nhận vào đối tượng Response chứa dữ liệu trả về từ server.
+
+    @Override
+    public void onProductClick(Product product) {
+        Intent intent = new Intent(getActivity(), DeiltaActivity.class);
+        intent.putExtra("product", product);
+        startActivity(intent);
+    }
+
+    Callback<Response<ArrayList<Categorie>>> getListCategoriesApi = new Callback<Response<ArrayList<Categorie>>>() {
         @Override
-        public void onResponse(Call<Response<ArrayList<Categorie>>> call, retrofit2.Response<Response<ArrayList<Categorie>>> response) {
-            //khi call thành công
-            if (response.isSuccessful()){
-                if (response.body().getStatus() == 200){ //check status code
-                    list= response.body().getData();// gán dữ liệu trả về từ phản hồi vào biến ds
+        public void onResponse(@NonNull Call<Response<ArrayList<Categorie>>> call, @NonNull retrofit2.Response<Response<ArrayList<Categorie>>> response) {
+            if (response.isSuccessful()) {
+                if (response.body().getStatus() == 200) {
+                    list = response.body().getData();
                     getData(list);
                 }
             }
         }
 
         @Override
-        public void onFailure(Call<Response<ArrayList<Categorie>>> call, Throwable t) {
+        public void onFailure(@NonNull Call<Response<ArrayList<Categorie>>> call, @NonNull Throwable t) {
             Log.d(">>>> Distributor", "onFailure: " + t.getMessage());
         }
     };
-    ///// product
 
     Callback<Response<ArrayList<Product>>> getListProductApi = new Callback<Response<ArrayList<Product>>>() {
         @Override
-        public void onResponse(Call<Response<ArrayList<Product>>> call, retrofit2.Response<Response<ArrayList<Product>>> response) {
+        public void onResponse(@NonNull Call<Response<ArrayList<Product>>> call, @NonNull retrofit2.Response<Response<ArrayList<Product>>> response) {
             if (response.isSuccessful()) {
                 if (response.body() != null && response.body().getStatus() == 200) {
-                    ArrayList<Product> products = response.body().getData();
-                    for (Product product : products) {
-                        Log.d("getListProductApi", "Product: " + product.toString());
-                    }
-                    listprouct = products;
-                    getData2(listprouct);
+                    listProduct = response.body().getData();
+                    getData2(listProduct);
                 } else {
                     Log.d("getListProductApi", "Empty response body or status is not 200");
                     showAlert("Empty response body or status is not 200 for products");
@@ -136,25 +130,17 @@ public class Home extends Fragment  {
         }
 
         @Override
-        public void onFailure(Call<Response<ArrayList<Product>>> call, Throwable t) {
+        public void onFailure(@NonNull Call<Response<ArrayList<Product>>> call, @NonNull Throwable t) {
             Log.d("getListProductApi", "onFailure: " + t.getMessage());
             showAlert("Failed to retrieve products: " + t.getMessage());
         }
     };
 
     private void showAlert(String message) {
-        // Hiển thị cảnh báo cho người dùng
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(message)
+        new AlertDialog.Builder(getContext())
                 .setTitle("Error")
-                .setPositiveButton("OK", null);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+                .setMessage(message)
+                .setPositiveButton("OK", null)
+                .show();
     }
-
-
-    /// close product
-
-
 }
-

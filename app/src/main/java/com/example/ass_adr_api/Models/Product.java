@@ -2,9 +2,10 @@ package com.example.ass_adr_api.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Product {
+public class Product implements Serializable {
 private String _id,product_name;
 private Double price,quantity;
 private String size;

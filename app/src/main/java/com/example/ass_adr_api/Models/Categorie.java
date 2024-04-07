@@ -2,7 +2,9 @@ package com.example.ass_adr_api.Models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Categorie {
+import java.io.Serializable;
+
+public class Categorie implements Serializable {
     @SerializedName("_id")
     private String id;
     private String loai;

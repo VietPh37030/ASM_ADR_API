@@ -1,12 +1,15 @@
 package com.example.ass_adr_api.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,10 +28,14 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     private final ArrayList<Product> list;
     private HttpRequest httpRequest;
     private ProductClickListener listener;
+    // Khai báo SharedPreferences
+    private SharedPreferences sharedPreferences;
 
     public ProductsAdapter(Context context, ArrayList<Product> list) {
         this.context = context;
         this.list = list;
+        // Khởi tạo SharedPreferences
+        sharedPreferences = context.getSharedPreferences("favorite_products", Context.MODE_PRIVATE);
 
     }
 
@@ -68,8 +75,23 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
                 } else {
                     holder.itFavorite.setImageResource(R.drawable.heart); // Màu đen
                 }
+                // Lưu trạng thái yêu thích vào SharedPreferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(product.get_id(), isFavorite[0]);
+                editor.apply();
             }
         });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("ProductsAdapter", "Item clicked: " + position);
+                if (listener != null) {
+                    listener.onProductClick(product);
+                    Toast.makeText(context, "Item clicked: " + position, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
     public void setProductClickListener(ProductClickListener listener) {
         this.listener = listener;
