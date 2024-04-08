@@ -44,4 +44,6 @@ public interface ApiService {
     Call<Response<ArrayList<Categorie>>> getListCategories();
     @GET("get-list-product")
     Call<Response<ArrayList<Product>>> getListProduct();
+    @PUT("update-product-by-id/{id}")
+    Call<Response<Product>> updateProductApi(@Path("id") String id, @Body Product product);
 }

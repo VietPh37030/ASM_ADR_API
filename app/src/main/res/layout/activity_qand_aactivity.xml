@@ -32,6 +32,11 @@
             android:visibility="gone"
             android:textAlignment="textStart"
             android:lineSpacingExtra="8dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"
+            />
 
     <TextView
         android:id="@+id/main2_content_text_view"
@@ -54,6 +59,11 @@
         android:visibility="gone"
         android:textAlignment="textStart"
         android:lineSpacingExtra="8dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"
+            />
     <TextView
         android:id="@+id/main3_content_text_view"
         android:layout_width="wrap_content"
@@ -75,6 +85,11 @@
         android:visibility="gone"
         android:textAlignment="textStart"
         android:lineSpacingExtra="8dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"
+            />
     <TextView
         android:id="@+id/main4_content_text_view"
         android:layout_width="wrap_content"
@@ -96,6 +111,11 @@
         android:visibility="gone"
         android:textAlignment="textStart"
         android:lineSpacingExtra="8dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"
+            />
     <TextView
         android:id="@+id/main5_content_text_view"
         android:layout_width="wrap_content"
