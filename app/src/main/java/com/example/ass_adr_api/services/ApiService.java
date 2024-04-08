@@ -33,6 +33,8 @@ public interface ApiService {
     Call<Response<User>> login(@Body User user);
     @GET("get-list-user")
     Call<Response<ArrayList<User>>> getListUser();
+    @GET("get-favorite-products")
+    Call<Response<ArrayList<Product>>> getFavoriteProducts(@Query("id") String productId);
     @GET("get-user-info")
     Call<Response<User>> getUserInfo(@Query("id") String userId);
     @PUT("update-user-by-id/{id}")

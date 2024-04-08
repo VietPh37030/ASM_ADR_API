@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Product implements Serializable {
 private String _id,product_name;
-private Double price,quantity;
+private int price,quantity;
 private String size;
     private String image;
     private String origin;
@@ -21,7 +21,7 @@ private String size;
     public Product() {
     }
 
-    public Product(String _id, String product_name, Double price, Double quantity, String size, String image, String origin, Categorie categorie, String createAt, String updateAt,boolean isFavorite) {
+    public Product(String _id, String product_name, int price, int quantity, String size, String image, String origin, Categorie categorie, String createAt, String updateAt,boolean isFavorite) {
         this._id = _id;
         this.product_name = product_name;
         this.price = price;
@@ -51,19 +51,19 @@ private String size;
         this.product_name = product_name;
     }
 
-    public Double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public Double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

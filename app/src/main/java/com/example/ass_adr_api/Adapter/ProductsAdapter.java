@@ -1,5 +1,6 @@
 package com.example.ass_adr_api.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -48,12 +49,12 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Product product = list.get(position);
         Glide.with(context).load(product.getImage()).into(holder.imgcay);
         holder.txtnamecay.setText(product.getProduct_name());
         holder.txtloaicay.setText(product.getCategorie().getLoai());
-        holder.txtgia.setText(String.valueOf(product.getPrice()));
+        holder.txtgia.setText(formatPrice(product.getPrice()));
         // Trạng thái ban đầu cho nút favorite
         final boolean[] isFavorite = {product.isFavorite()};
         if (isFavorite[0]) {
@@ -87,11 +88,14 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
                 Log.d("ProductsAdapter", "Item clicked: " + position);
                 if (listener != null) {
                     listener.onProductClick(product);
-                    Toast.makeText(context, "Item clicked: " + position, Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+    }
+    private String formatPrice(int price) {
+        // Định dạng giá tiền theo kiểu tiền tệ Việt Nam đồng
+        return String.format("%,dđ", price);
     }
     public void setProductClickListener(ProductClickListener listener) {
         this.listener = listener;

@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.ass_adr_api.Activity.EditProfile;
+import com.example.ass_adr_api.Activity.QandAActivity;
 import com.example.ass_adr_api.Models.Response;
 import com.example.ass_adr_api.Models.User;
 import com.example.ass_adr_api.R;
@@ -31,7 +32,7 @@ import retrofit2.Callback;
 public class Account extends Fragment {
 
     private TextView txtUsername, txtEmail;
-    private TextView txt_btn_chinhsuatt,btn_exit;
+    private TextView txt_btn_chinhsuatt,btn_exit,btn_qana;
     private ImageView imgAvatar;
     private HttpRequest httpRequest;
 
@@ -48,6 +49,7 @@ public class Account extends Fragment {
         imgAvatar = view.findViewById(R.id.imageView);
         txt_btn_chinhsuatt = view.findViewById(R.id.textView17);
         btn_exit =view.findViewById(R.id.account_tx_exit);
+        btn_qana = view.findViewById(R.id.textView21);
         httpRequest = new HttpRequest();
         // Lấy ID người dùng từ SharedPreferences
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("userInfo", MODE_PRIVATE);
@@ -88,7 +90,13 @@ public class Account extends Fragment {
                         .show();
             }
         });
-
+    btn_qana.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getActivity(),QandAActivity.class);
+        startActivity(intent);
+    }
+});
 
         return view;
     }
