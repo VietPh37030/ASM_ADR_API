@@ -80,6 +80,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(product.get_id(), isFavorite[0]);
                 editor.apply();
+                // Gọi API để cập nhật trạng thái yêu thích của sản phẩm trên server
+                updateFavoriteStatus(product.get_id(), isFavorite);
             }
         });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +95,10 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         });
 
     }
+
+    private void updateFavoriteStatus(String id, boolean[] isFavorite) {
+    }
+
     private String formatPrice(int price) {
         // Định dạng giá tiền theo kiểu tiền tệ Việt Nam đồng
         return String.format("%,dđ", price);
